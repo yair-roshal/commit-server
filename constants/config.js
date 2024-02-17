@@ -1,6 +1,6 @@
-require("dotenv").config();
-const path = require("path");
-const fs = require("fs");
+require("dotenv").config()
+const path = require("path")
+const fs = require("fs")
 
 const httpsOptions = {
   key: fs.readFileSync(
@@ -12,13 +12,13 @@ const httpsOptions = {
     path.join(__dirname, "../certificates/burgerim.ru.crt"),
     "utf8"
   ),
-};
+}
 
 const corsOptions = {
   origin: "*",
   credentials: true,
   methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
   allowedHeaders: ["Origin", "X-Requested-With", "Content-Type", "Accept"],
-};
+}
 
-module.exports = { httpsOptions, corsOptions };
+module.exports = { httpsOptions, corsOptions }

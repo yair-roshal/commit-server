@@ -1,5 +1,5 @@
-const { Sequelize, DataTypes } = require("sequelize");
-const { DB_HOST, DB_USER, DB_PASSWORD, DB_NAME } = process.env;
+const { Sequelize, DataTypes } = require("sequelize")
+const { DB_HOST, DB_USER, DB_PASSWORD, DB_NAME } = process.env
 
 const sequelize = new Sequelize(
   DB_NAME,
@@ -7,32 +7,32 @@ const sequelize = new Sequelize(
   DB_PASSWORD,
 
   { host: DB_HOST, dialect: "mysql" }
-);
+)
 
 sequelize
   .authenticate()
   .then(() => {
-    console.log("Connection has been established successfully.");
+    console.log("Connection has been established successfully.")
   })
   .catch((error) => {
-    console.error("Unable to connect to the database: ", error);
-  });
+    console.error("Unable to connect to the database: ", error)
+  })
 
-  const User = sequelize.define(
-    "user",
-    {
-      name: {
-        type: DataTypes.STRING,
-        allowNull: false,
-      },
-      phone: {
-        type: DataTypes.STRING,
-        allowNull: false,
-      },
+const User = sequelize.define(
+  "user",
+  {
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false,
     },
-    {
-      timestamps: false,
-    }
-  );
+    phone: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+  },
+  {
+    timestamps: false,
+  }
+)
 
-module.exports = User;
+module.exports = User
