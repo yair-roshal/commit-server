@@ -57,6 +57,18 @@ Start the Node.js server:
 ```bash
  node server.js
 ```
+### Usage
+
+The server can accept GET and POST requests at the address "/users" 
+
+example post request :
+
+```bash
+{"name": "Yair", "phone": "1234567890"}
+```
+
+This code can be executed in Node.js version 14 and above, as it uses ES6+ syntax and asynchronous functions.
+the project was tested on version v18.16.0
 
 ### Technologies Used
 
